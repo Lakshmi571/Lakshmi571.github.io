@@ -11,19 +11,17 @@
         .project-card { background: white; padding: 30px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
         .project-card h2 { color: #2c3e50; margin-top: 20px; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
         
-        /* This container now forces the image to fill the width and height without black bars */
+        /* This container removes the fixed height so the photo isn't forced to crop */
         .project-image-container {
-            width: calc(100% + 60px); /* Offsets the card padding to hit the edges */
-            margin: -30px -30px 20px -30px; /* Pulls image to the very top and sides of the card */
-            height: 400px; /* You can adjust this height to show more or less of the photo */
-            overflow: hidden;
+            width: calc(100% + 60px); 
+            margin: -30px -30px 20px -30px; 
+            background: #fff;
         }
         
         .project-image { 
             width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* This "widens" the photo to fill the entire black area */
-            object-position: center; /* Keeps the middle of your group photos in focus */
+            height: auto; /* This ensures the photo is shown fully without zooming in */
+            display: block;
         }
 
         .tag { background: #3498db; color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; }
@@ -46,7 +44,7 @@
         </div>
         <h2>Accenture UIC Competition: Project A.C.T</h2>
         <p><span class="tag">AI for Social Good</span> <span class="tag">Public Service</span></p>
-        <p>We addressed a critical challenge in Singapore: the strain on CDC voucher support. <strong>Project A.C.T</strong> uses AI-assisted support to handle routine enquiries, prioritizing cases for officers to deliver trusted help while preserving human care and accessibility.</p>
+        <p>We addressed the strain on Singapore's CDC voucher support. <strong>Project A.C.T</strong> uses AI-assisted support to handle routine enquiries, prioritizing cases for officers to deliver trusted help while preserving human care and accessibility.</p>
     </div>
 
     <div class="project-card">
@@ -55,7 +53,7 @@
         </div>
         <h2>Microsoft Competition: AbleConnect</h2>
         <p><span class="tag">Inclusive Tech</span> <span class="tag">AI Personalization</span></p>
-        <p>Created <strong>AbleConnect</strong>, a platform connecting persons with disabilities to jobs using AI for role recommendations and adaptive resume generation. The initiative was recognized for helping people with different needs thrive in the job market.</p>
+        <p>Created <strong>AbleConnect</strong>, a platform connecting persons with disabilities to jobs using AI for role recommendations and adaptive resume generation. Includes a live accessibility checker for inclusive hiring.</p>
     </div>
 
     <div class="project-card">
@@ -64,7 +62,7 @@
         </div>
         <h2>SMU Hackathon: Project SLAA</h2>
         <p><span class="tag">Generative AI</span> <span class="tag">SkillsFuture Integration</span></p>
-        <p>Developed an AI-driven "Resume Builder" chatbot designed to bridge skills gaps for Singaporean graduates. The project proposes utilizing Generative AI to enhance government initiatives like SkillsFuture through personalized course recommendations.</p>
+        <p>Developed an AI-driven "Resume Builder" chatbot that identifies skills gaps and provides personalized SkillsFuture course recommendations, integrated with Singpass for secure access.</p>
     </div>
 
     <footer>
