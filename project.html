@@ -9,9 +9,25 @@
         nav { text-align:center; padding: 15px; background: #2c3e50; margin-bottom: 30px; border-radius: 8px; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
         .project-card { background: white; padding: 30px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .project-card h2 { color: #2c3e50; margin-top: 0; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .project-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd; }
-        .tag { background: #3498db; color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
+        .project-card h2 { color: #2c3e50; margin-top: 15px; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        
+        /* The change is here: "contain" ensures the whole photo fits */
+        .project-image-container {
+            width: 100%;
+            background-color: #000; /* Adds a black background if the photo is wider than the container */
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .project-image { 
+            width: 100%; 
+            height: auto; 
+            max-height: 550px; /* Increased height to give more room */
+            object-fit: contain; /* This "zooms out" and shows the full image */
+        }
+
+        .tag { background: #3498db; color: white; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; }
         footer { text-align: center; margin-top: 50px; color: #777; font-size: 0.9rem; }
     </style>
 </head>
@@ -26,24 +42,30 @@
     <h1 style="text-align: center; color: #2c3e50;">Technical Competition Highlights</h1>
 
     <div class="project-card">
-        <img src="Accenture-UIC.jpg" alt="Accenture UIC Competition" class="project-image">
+        <div class="project-image-container">
+            <img src="Accenture-UIC.jpg" alt="Accenture UIC Competition" class="project-image">
+        </div>
         <h2>Accenture UIC Competition: Project A.C.T</h2>
         <p><span class="tag">AI for Social Good</span> <span class="tag">Public Service</span></p>
-        <p>We addressed a critical challenge in Singapore: the strain on CDC voucher support caused by high enquiry volumes and the digital divide among seniors. <strong>Project A.C.T</strong> uses AI-assisted support to handle routine enquiries, prioritising cases for officers to deliver trusted help. This project reinforced the importance of using AI to strengthen public service delivery while preserving human care and accessibility.</p>
+        <p>We addressed a critical challenge in Singapore: the strain on CDC voucher support. <strong>Project A.C.T</strong> uses AI-assisted support to handle routine enquiries, prioritizing cases for officers to deliver trusted help while preserving human care and accessibility.</p>
     </div>
 
     <div class="project-card">
-        <img src="microsoft-hackathonJPG.JPG" alt="Microsoft Hackathon" class="project-image">
+        <div class="project-image-container">
+            <img src="microsoft-hackathonJPG.JPG" alt="Microsoft Hackathon" class="project-image">
+        </div>
         <h2>Microsoft Competition: AbleConnect</h2>
         <p><span class="tag">Inclusive Tech</span> <span class="tag">AI Personalization</span></p>
-        <p>Created <strong>AbleConnect</strong>, a platform connecting persons with disabilities to jobs that consider their specific needs. It uses AI to recommend roles, generate adaptive resumes, and simulate interviews. For employers, we built a live accessibility checker and dashboards for NGOs to ensure hiring is truly inclusive and data-driven.</p>
+        <p>Created <strong>AbleConnect</strong>, a platform connecting persons with disabilities to jobs using AI for role recommendations, adaptive resume generation, and interview simulations. Includes a live accessibility checker for inclusive hiring.</p>
     </div>
 
     <div class="project-card">
-        <img src="IMG_6404.JPG" alt="SMU Hackathon Solution" class="project-image">
+        <div class="project-image-container">
+            <img src="IMG_6404.JPG" alt="SMU Hackathon Solution" class="project-image">
+        </div>
         <h2>SMU Hackathon: Project SLAA</h2>
         <p><span class="tag">Generative AI</span> <span class="tag">SkillsFuture Integration</span></p>
-        <p>Developed an AI-driven platform to enhance graduate resumes. The system features an AI chatbot that identifies skills gaps and provides personalized SkillsFuture course recommendations. By integrating Singpass authentication, we ensured a secure and seamless way for Singaporean graduates to utilize their credits and better prepare for their future careers.</p>
+        [cite_start]<p>Developed an AI-driven "Resume Builder" chatbot that identifies skills gaps and provides personalized SkillsFuture course recommendations, integrated with Singpass for secure access. [cite: 97, 165, 205]</p>
     </div>
 
     <footer>
